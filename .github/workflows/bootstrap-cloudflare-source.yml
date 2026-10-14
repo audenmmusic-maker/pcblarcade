@@ -1,0 +1,28 @@
+name: Bootstrap Arcade sources from Cloudflare
+on:
+  push:
+    paths:
+      - .github/workflows/bootstrap-cloudflare-source.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore every Arcade static asset from the existing Cloudflare deployment
+        run: python3 scripts/recover-arcade.py
+      - name: Validate before committing
+        run: |
+          node scripts/verify.mjs
+          test "$(find site -type f | wc -l)" -ge 234
+      - name: Commit complete Arcade files (no deployment)
+        run: |
+          git config user.name "PCBL Arcade Import"
+          git config user.email "actions@users.noreply.github.com"
+          git add site
+          git diff --cached --quiet && exit 0
+          git commit -m "Import complete Cloudflare Arcade and preserve updated feature tags"
+          git push origin HEAD:main
