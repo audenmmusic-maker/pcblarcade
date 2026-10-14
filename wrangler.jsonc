@@ -1,0 +1,8 @@
+{
+  "name": "pcblarcade",
+  "compatibility_date": "2026-10-14",
+  "assets": {
+    "directory": "./site",
+    "html_handling": "auto-trailing-slash"
+  }
+}
