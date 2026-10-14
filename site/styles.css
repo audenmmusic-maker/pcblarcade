@@ -143,3 +143,9 @@
 .world-promo-credit{position:absolute;bottom:0;left:0;right:0;z-index:4;background:#08100ccf;text-align:center;padding:12px;font:900 clamp(12px,1.4vw,20px) Impact,Arial,sans-serif;letter-spacing:.12em;color:#d6ffc6}
 .world-promo-credit b{color:#cbff87}
 @media(max-width:800px){.world-feature-cinematic{min-height:255px}.world-promo-player img{height:115px}.world-promo-player:nth-child(n) img{height:clamp(86px,20vw,160px)}.world-promo-cast{padding-bottom:35px}.world-promo-player small{font-size:6px}.world-promo-scene{padding:10px}.world-promo-incident{font-size:8px}}
+
+/* PCBL WORLD promotional artwork. Single rendered image; no badge, emojis, captions, or photo collage DOM. */
+.world-feature-art.world-feature-cinematic{display:block!important;min-height:100%;background:linear-gradient(180deg,rgba(5,12,8,.08),rgba(5,12,8,.13)),url("assets/pcbl-world-cinematic-banner.jpg") center/cover no-repeat!important;}
+.game-world .world-card-art{background:linear-gradient(180deg,rgba(7,12,8,.05),rgba(7,12,8,.32)),url("assets/pcbl-world-cinematic-card.jpg") center/cover no-repeat!important;}
+.game-world .world-card-orbit,.game-world .world-card-streetlights{display:none!important;}
+@media(max-width:800px){.world-feature-art.world-feature-cinematic{min-height:270px;}}
