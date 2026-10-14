@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - .github/workflows/bootstrap-cloudflare-source.yml
+      - scripts/recover-arcade.py
   workflow_dispatch:
 permissions:
   contents: write
