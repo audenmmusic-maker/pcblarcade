@@ -1,0 +1,93 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>PCBL VERSUS</title><link rel="stylesheet" href="styles.css"><link rel="preload" href="assets/pcbl-logo.png" as="image"><link rel="preload" href="assets/audio/pcbl-versus-written-in-the-stars-8bit.ogg" as="audio" type="audio/ogg"><link rel="preload" href="assets/parks/main_preview.jpg" as="image"><link rel="preload" href="assets/parks/polo_preview.jpg" as="image"><link rel="preload" href="assets/parks/murphy_preview.jpg" as="image"><link rel="icon" href="assets/pcbl-logo.png"></head><body>
+<div id="app">
+<div id="renderHost" class="render-host"><canvas id="gameCanvas" width="1280" height="720"></canvas></div>
+<section id="screen-computer-required" class="screen active computer-required-screen">
+  <div class="grain"></div><div class="hero-bg"></div>
+  <div class="computer-required-wrap">
+    <div class="computer-required-panel glass">
+      <img src="assets/pcbl-logo.png" class="computer-required-logo" alt="PCBL" decoding="async" fetchpriority="high">
+      <div class="eyebrow">BEFORE YOU PLAY</div>
+      <h2>COMPUTER REQUIRED</h2>
+      <p>PCBL THE SHOW requires a computer to play.</p>
+      <div class="computer-required-controls"><b>MOUSE + KEYBOARD REQUIRED</b><span>Hitting, pitching, camera controls, and pause-menu inputs are designed for desktop/laptop play.</span></div>
+      <button id="computerContinue" class="primary big">I'M ON A COMPUTER — CONTINUE</button>
+    </div>
+  </div>
+</section>
+<section id="screen-versus-intro" class="screen versus-intro-screen">
+  <canvas id="versusIntroCanvas" class="versus-intro-canvas" width="1280" height="720"></canvas>
+  <div class="grain"></div>
+  <div class="versus-intro-overlay">
+    <img src="assets/pcbl-logo.png" class="versus-logo" alt="PCBL" decoding="async" fetchpriority="high">
+    <div id="versusIntroTitle" class="versus-intro-title">PCBL VERSUS</div>
+    <button id="startGameBtn" class="primary big start-game-btn hidden">START GAME</button>
+  </div>
+</section>
+<section id="screen-menu" class="screen menu-screen">
+  <canvas id="menuLoopCanvas" class="menu-loop-canvas" width="1280" height="720"></canvas>
+  <div class="grain"></div><div class="hero-bg menu-loop-backdrop"></div>
+  <header class="menu-header"><img src="assets/pcbl-logo.png" class="logo" decoding="async"><div><h1>PCBL <span>VERSUS</span></h1><p>RETRO BLITZBALL SHOWDOWN</p></div></header>
+  <div class="menu-panel glass"><div class="eyebrow">PLAY PCBL VERSUS</div><button id="readyBtn" class="primary big">READY UP</button><button id="singleBtn" class="ghost big single-btn">SINGLEPLAYER</button><div id="queueStatus" class="status">PRESS READY UP TO FIND AN OPPONENT</div>
+    <div class="controls-mini"><b>HITTING</b> Mouse PCI · 1 Power · 2 Regular · 3 Contact<br><b>PITCHING</b> Mouse Aim · 1–5 Pitch Selection · Click Deliver<br><b>PAUSE</b> P / Esc · Camera · Volume · Exit</div>
+  </div>
+</section>
+
+<section id="screen-select" class="screen select-screen">
+ <div class="topbar"><img src="assets/pcbl-logo.png"><b id="matchModeLabel">MATCH FOUND</b><span id="selectState">SELECT YOUR PLAYER</span></div>
+ <div class="season-tabs" id="seasonTabs"></div>
+ <div class="versus-select">
+   <div id="myCard" class="player-card"></div>
+   <div class="versus-mark">VS</div>
+   <div id="oppCard" class="player-card remote"></div>
+ </div>
+ <div class="roster-strip" id="rosterStrip"></div>
+ <button id="lockPlayer" class="primary lock-btn">LOCK PLAYER</button>
+</section>
+
+<section id="screen-stadium" class="screen stadium-screen">
+ <div class="topbar"><img src="assets/pcbl-logo.png"><b>STADIUM SELECT</b><span>VOTE — COIN TOSS BREAKS A SPLIT</span></div>
+ <div class="stadium-grid" id="stadiumGrid"></div>
+ <div id="stadiumStatus" class="status center">CHOOSE A BALLPARK</div>
+</section>
+
+<section id="screen-intro" class="screen intro-screen">
+ <div id="introStats" class="intro-stats"></div>
+ <div class="intro-overlay"><div id="introTitle" class="intro-title"></div><div id="introSub"></div><button id="skipIntro" class="ghost">SKIP INTRO <span id="skipCount">0/2</span></button></div>
+</section>
+
+<section id="screen-game" class="screen game-screen">
+ <div class="game-stage">
+  <div id="scorebug" class="scorebug"></div>
+  <div id="pitchHud" class="pitch-hud"></div>
+  <div id="batHud" class="bat-hud"><span>1 POWER</span><span>2 REGULAR</span><span>3 CONTACT</span></div>
+  <div id="timingFeedback" class="timing-feedback" aria-live="polite">
+   <div id="timingLabel" class="timing-label">GOOD</div>
+   <div id="timingDetail" class="timing-detail">0 MS</div>
+   <div class="timing-meter"><div class="timing-good-zone"></div><div id="timingTick" class="timing-tick"></div></div>
+   <div class="timing-ends"><span>EARLY</span><span>LATE</span></div>
+  </div>
+  <div id="callout" class="callout"></div>
+  <button id="pauseBtn" class="pause-btn" aria-label="Pause game">Ⅱ</button>
+  <div id="pauseMenu" class="pause-overlay" aria-hidden="true">
+   <div class="pause-panel glass">
+    <div class="eyebrow">PCBL THE SHOW</div><h2>PAUSED</h2>
+    <button id="resumeGame" class="primary pause-action">RESUME GAME</button>
+    <div class="pause-setting"><label>CAMERA HEIGHT <output id="cameraHeightValue">0.0</output></label><input id="cameraHeight" type="range" min="-1.5" max="1.5" step="0.1" value="0"></div>
+    <div class="pause-setting"><label>CAMERA ZOOM <output id="cameraZoomValue">1.00×</output></label><input id="cameraZoom" type="range" min="0.75" max="1.35" step="0.05" value="1"></div>
+    <div class="pause-setting"><label>VOLUME <output id="gameVolumeValue">70%</output></label><input id="gameVolume" type="range" min="0" max="1" step="0.05" value="0.7"></div>
+    <button id="exitGame" class="ghost pause-action exit">EXIT GAME</button>
+    <small>ESC / P TO RESUME</small>
+   </div>
+  </div>
+  <div id="transition" class="transition"><img src="assets/pcbl-logo.png"><span>PCBL</span></div>
+ </div>
+</section>
+
+<section id="screen-post" class="screen post-screen">
+ <div class="post-wrap glass"><div class="eyebrow">FINAL</div><h2 id="finalScore"></h2><div id="boxScore" class="boxscore"></div><div id="postSummary" class="post-summary"></div><div class="scorebook-title">SCOREBOOK</div><div id="scorebook" class="scorebook-log"></div><button id="backMatch" class="primary big">FIND MATCH</button></div>
+</section>
+
+
+</div>
+<script src="vendor/three.min.js"></script><script src="data.js"></script><script src="assets/models/anatomy.js"></script><script src="webgl-engine.js"></script><script src="game.js"></script>
+</body></html>

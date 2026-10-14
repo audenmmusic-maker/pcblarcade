@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090b0c">
+  <title>PCBL ATTAX Memory</title>
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../arcade-back.css"><link rel="stylesheet" href="../../arcade-game-layout.css"></head>
+<body class="arcade-hosted"><a class="arcade-back" href="../../" aria-label="Back to PCBL Arcade"><span>← BACK TO PCBL ARCADE</span><span>✳</span></a>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="PCBL Attax Memory home">
+      <span class="brand-ball">PCBL</span>
+      <span><b>ATTAX</b><small>MEMORY</small></span>
+    </a>
+    <div class="header-actions">
+      <button class="icon-button" id="soundToggle" type="button" aria-pressed="true" aria-label="Turn sound off">SOUND: ON</button>
+      <button class="icon-button" id="fullscreenButton" type="button">EXPAND ↗</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">THE OFFICIAL CARD-MATCHING CHALLENGE</span>
+        <h1>PCBL<br><em>ATTAX</em><br>MEMORY</h1>
+        <p>Find every matching pair from the full PCBL ATTAX collection. Each round draws a new mix of moments, awards, records, rookies, postseason cards and lowlights.</p>
+      </div>
+      <div class="difficulty-panel" aria-labelledby="difficultyTitle">
+        <span class="panel-number">01</span>
+        <div>
+          <span class="panel-label" id="difficultyTitle">SELECT DIFFICULTY</span>
+          <div class="difficulty-options" role="group" aria-label="Difficulty">
+            <button type="button" data-pairs="6"><strong>ROOKIE</strong><small>6 PAIRS</small></button>
+            <button type="button" data-pairs="10" class="active"><strong>ALL-STAR</strong><small>10 PAIRS</small></button>
+            <button type="button" data-pairs="15"><strong>LEGEND</strong><small>15 PAIRS</small></button>
+          </div>
+        </div>
+        <button class="deal-button" id="dealButton" type="button"><span>DEAL THE CARDS</span><b>↘</b></button>
+      </div>
+    </section>
+
+    <section class="game-shell" id="gameShell" aria-labelledby="boardTitle">
+      <div class="game-topbar">
+        <div>
+          <span class="panel-label">CURRENT ROUND</span>
+          <h2 id="boardTitle">ALL-STAR DECK</h2>
+        </div>
+        <div class="scoreboard" aria-label="Game statistics">
+          <div><small>TIME</small><strong id="timeValue">00:00</strong></div>
+          <div><small>MOVES</small><strong id="movesValue">0</strong></div>
+          <div><small>MATCHES</small><strong><span id="matchesValue">0</span><i id="pairsTotal">/10</i></strong></div>
+          <div><small>BEST</small><strong id="bestValue">—</strong></div>
+        </div>
+        <button class="new-game-button" id="newGameButton" type="button">RESHUFFLE</button>
+      </div>
+
+      <div class="status-line" aria-live="polite">
+        <span id="statusText">PRESS DEAL THE CARDS TO BEGIN.</span>
+        <span class="progress-track"><i id="progressBar"></i></span>
+      </div>
+
+      <div class="memory-board preview" id="memoryBoard" aria-label="Memory card board"></div>
+    </section>
+
+    <section class="how-to-play">
+      <span class="panel-number">02</span>
+      <div><strong>FLIP TWO</strong><p>Select any two face-down cards.</p></div>
+      <div><strong>FIND THE MATCH</strong><p>Matching ATTAX cards stay revealed.</p></div>
+      <div><strong>CLEAR THE DECK</strong><p>Finish in the fewest moves and fastest time.</p></div>
+    </section>
+  </main>
+
+  <div class="win-modal" id="winModal" hidden>
+    <div class="modal-backdrop"></div>
+    <section class="win-card" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+      <span class="win-kicker">DECK CLEARED</span>
+      <h2 id="winTitle">MEMORY<br><em>MASTERED.</em></h2>
+      <p id="winMessage"></p>
+      <div class="win-stats">
+        <div><small>TIME</small><strong id="winTime">00:00</strong></div>
+        <div><small>MOVES</small><strong id="winMoves">0</strong></div>
+        <div><small>RATING</small><strong id="winRating">A</strong></div>
+      </div>
+      <div class="win-actions">
+        <button type="button" id="playAgainButton">PLAY AGAIN</button>
+        <button type="button" id="changeDifficultyButton">CHANGE LEVEL</button>
+      </div>
+    </section>
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+  </div>
+
+  <footer><span>PCBL ATTAX</span><span>53-CARD MASTER COLLECTION</span></footer>
+  <script src="app.js"></script>
+<script src="../../arcade-top.js"></script></body>
+</html>

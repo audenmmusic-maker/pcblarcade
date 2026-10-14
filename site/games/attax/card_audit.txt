@@ -1,0 +1,28 @@
+PCBL ATTAX CARD AUDIT
+
+Verified deck size: 53 cards
+Hitter pool: 31
+Pitcher pool: 22
+
+Corrections / additions in this build:
+- AUDEN MITCHELL / 15 RUNS ALLOWED — RHP pitcher card replaced with corrected artwork and corrected results: FB 68 GO / BRK 58 K / OFF 63 GO.
+- JARVIS MCGRATH / PCC GAME 1 WALKOFF — LHH hitter card replaced with corrected artwork and corrected OFF result: 81 1B. Full results: FB 89 2B / BRK 99 HR / OFF 81 1B.
+- JOSEF SHUTOVSKY / LOWLIGHTS — new LHH hitter card added: FB 62 1B / BRK 41 1B / OFF 37 1B.
+- NAJEE AND JARVIS / PCC GAME 2 NO-HIT — intentionally remains a hitter card with BB / BB / BB. If it wins the matchup, the result is a walk.
+
+Classification rule:
+- LHH / RHH cards belong to the hitter pool.
+- LHP / RHP cards belong to the pitcher pool.
+- Results are used as a secondary sanity check.
+
+Automated sanity check after the update:
+- 53 card definitions found.
+- 31 hitter cards / 22 pitcher cards.
+- All referenced card images are present.
+- Every pitcher card now contains only pitcher/out outcomes (GO, K, FO, PO, LO).
+- Every hitter card contains only hitter/on-base outcomes (1B, 2B, 3B, HR, BB).
+- The intentional Najee + Jarvis BB / BB / BB hitter lowlight is valid and preserved.
+
+Arcade sync:
+- ATTAX Memory now reads all 53 card images directly from the ATTAX master card folder instead of maintaining a duplicate deck.
+- Arcade home/ATTAX/Memory menu previews also use the same master folder and rotate through the collection.

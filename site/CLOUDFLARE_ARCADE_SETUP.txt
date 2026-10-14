@@ -1,0 +1,24 @@
+PCBL ARCADE - CLOUDFLARE PAGES DIRECT UPLOAD
+============================================
+This ZIP contains the complete static Arcade site and OG games.
+NO TERMINAL IS REQUIRED.
+
+In the Cloudflare dashboard, create a SEPARATE Pages project
+(not the existing pcbl-world-beta Worker):
+Workers & Pages -> Create application -> Pages -> Drag and drop files
+Use project name pcbl-arcade, then drag THIS ZIP into the site upload.
+Do not upload this onto the WORLD service.
+
+The Arcade's OG games run directly as static files. PeerJS-based online
+features depend on their existing external connection services.
+
+WORLD LINK: CONNECTED
+https://pcbl-world-beta.audenmmusic.workers.dev/world/
+Both PCBL WORLD buttons now open this Cloudflare URL.
+
+Cloudflare Pages supports uploading this ZIP/folder from the website.
+Once hosted, direct-upload Pages deployments must be repeated manually.
+For automatic Git-based builds in the future, create a separate repo and
+connect that repo to a new Cloudflare Pages project.
+
+This file also documents what changed from the earlier Netlify archive.

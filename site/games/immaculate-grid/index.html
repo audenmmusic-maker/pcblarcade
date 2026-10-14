@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#090b0c">
+  <title>PCBL Immaculate Grid</title>
+  <link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="../../arcade-back.css"><link rel="stylesheet" href="../../arcade-game-layout.css"></head>
+<body class="arcade-hosted"><a class="arcade-back" href="../../" aria-label="Back to PCBL Arcade"><span>← BACK TO PCBL ARCADE</span><span>✳</span></a>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="PCBL Immaculate Grid home"><span class="brand-ball">PCBL</span><span><b>IMMACULATE GRID</b><small>LIVE EDITION</small></span></a>
+    <div class="live-chip" id="sheetStatus"><i></i> LOADING PCBL DATA</div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">CAREER × SEASON × AWARDS × STATS</span>
+        <h1>IMMACULATE<br><em>GRID</em></h1>
+        <p>Fill all nine squares with PCBL player profiles that match both categories. Stats and awards are mixed randomly across both axes. Each player is split into distinct <strong>CAREER, S1, S2 and S3</strong> profiles, and every profile can be used only once.</p>
+      </div>
+      <div class="hero-controls">
+        <label><span>GRID TYPE</span><select id="gridType"><option value="random">FRESH RANDOM GRID</option><option value="daily">DAILY GRID</option></select></label>
+        <button type="button" id="newGridButton"><span>GENERATE GRID</span><b>↻</b></button>
+        <small>LIVE REGULAR-SEASON, POSTSEASON AND AWARD DATA. AWARD ROWS REQUIRE 2+ DISTINCT WINNERS. TWR EXCLUDED.</small>
+      </div>
+    </section>
+
+    <section class="game-shell">
+      <div class="game-bar">
+        <div><span class="eyebrow">CURRENT GRID</span><h2 id="gridLabel">RANDOM GRID</h2></div>
+        <div class="game-metrics">
+          <div><small>SCORE</small><strong><span id="scoreValue">0</span>/9</strong></div>
+          <div><small>GUESSES</small><strong><span id="guessValue">0</span>/9</strong></div>
+          <div><small>DIFFICULTY</small><strong id="difficultyValue">—</strong></div>
+        </div>
+        <button type="button" id="restartButton">RESET BOARD</button>
+      </div>
+      <div class="grid-wrap">
+        <div class="immaculate-grid" id="grid" aria-label="PCBL Immaculate Grid"></div>
+      </div>
+      <div class="game-note"><span>9 TOTAL GUESSES</span><span>MISSED SQUARES STAY OPEN</span><span>EVERY USED ENTRY IS LOCKED</span></div>
+    </section>
+
+    <section class="explainer">
+      <span class="panel-number">01</span>
+      <div><span>PROFILE EXAMPLE</span><strong>AUDEN — S2</strong><p>Uses Auden's Season 2 statistics and Season 2 awards.</p></div>
+      <div><span>CAREER ANSWER</span><strong>JARVIS — CAREER</strong><p>Uses career statistics and every award won across eligible seasons.</p></div>
+      <div><span>STAT SOURCES</span><strong>LIVE PCBL SHEET</strong><p>Categories identify regular-season or postseason data when needed.</p></div>
+      <div><span>AWARD ROW RULE</span><strong>2+ DIFFERENT WINNERS</strong><p>An award-based row stays out of the grid until at least two different players qualify.</p></div>
+    </section>
+  </main>
+
+  <div class="picker-modal" id="pickerModal" hidden>
+    <div class="modal-backdrop" data-close-picker></div>
+    <section class="picker-card" role="dialog" aria-modal="true" aria-labelledby="pickerTitle">
+      <button class="modal-close" type="button" data-close-picker aria-label="Close player picker">×</button>
+      <span class="eyebrow">SELECT ONE PROFILE</span>
+      <h2 id="pickerTitle">CHOOSE A CAREER/SEASON PROFILE</h2>
+      <div class="matchup-label" id="pickerCategories"></div>
+      <div class="profile-filters" id="profileFilters"></div>
+      <div class="profile-picker" id="pickerProfiles"></div>
+      <p class="picker-warning">Every selection uses one of your nine guesses. A miss leaves the square open, but that career/season entry cannot be used again.</p>
+    </section>
+  </div>
+
+  <div class="finish-modal" id="finishModal" hidden>
+    <div class="modal-backdrop"></div>
+    <section class="finish-card" role="dialog" aria-modal="true" aria-labelledby="finishTitle">
+      <span class="eyebrow">GRID COMPLETE</span>
+      <h2 id="finishTitle"><span id="finalScore">9</span><small>/9</small></h2>
+      <strong id="finishGrade">IMMACULATE</strong>
+      <p id="finishMessage"></p>
+      <div class="finish-actions"><button type="button" id="viewAnswersButton">VIEW ANSWERS</button><button type="button" id="shareButton">COPY RESULTS</button><button type="button" id="nextGridButton">NEW GRID</button></div>
+    </section>
+  </div>
+
+  <footer><span>PCBL IMMACULATE GRID</span><span>LIVE PCBL PROFILE DATA</span></footer>
+  <script src="pcbl-snapshot.js?v=7"></script>
+  <script src="app.js?v=7"></script>
+<script src="../../arcade-top.js"></script></body>
+</html>

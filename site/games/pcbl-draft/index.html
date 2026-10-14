@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="PCBL Draft — build the best 12-card roster from the PCBL ATTAX card collection.">
+<title>PCBL DRAFT</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../arcade-back.css">
+</head>
+<body>
+<a class="arcade-back" href="../../" aria-label="Back to PCBL Arcade"><span>← BACK TO PCBL ARCADE</span><span>✳</span></a>
+<div class="noise"></div>
+<header class="topbar">
+  <div class="brand"><span>PCBL</span><strong>DRAFT</strong></div>
+  <div class="top-meta"><span id="pick-label">PICK 1 OF 12</span><span class="sep">•</span><span>7 HITTERS / 5 PITCHERS</span></div>
+  <button id="rules-btn" class="utility">RULES</button>
+</header>
+<main>
+<section class="hero">
+  <div><p class="eyebrow">PCBL CARD GAME</p><h1>BUILD YOUR <em>ROSTER.</em></h1><p class="sub">Choose 1 of 3 cards each round. Balance your ratings, seasons, and series to build the strongest 7H / 5P roster.</p></div>
+  <div class="progress-wrap"><div class="progress-head"><span>DRAFT PROGRESS</span><b id="progress-text">0 / 12</b></div><div class="progress"><i id="progress-bar"></i></div><div class="requirements"><span id="hit-need">H 0 / 7</span><span id="pitch-need">P 0 / 5</span></div></div>
+</section>
+<section class="draft-area">
+  <div class="section-head"><div><span class="kicker">AVAILABLE</span><h2>CHOOSE ONE</h2></div><div id="rarity-note" class="rarity-note"></div></div>
+  <div id="choices" class="choices"></div>
+</section>
+<section class="roster-area">
+  <div class="section-head"><div><span class="kicker">YOUR BUILD</span><h2>ROSTER <span id="roster-count">0/12</span></h2></div><div class="roster-status" id="roster-status">Draft your first card.</div></div>
+  <div class="roster-columns">
+  <div class="roster-group">
+    <div class="roster-group-head"><span>HITTERS</span><b id="hitter-roster-count">0 / 7</b></div>
+    <div id="hitter-roster" class="roster-grid"></div>
+  </div>
+  <div class="roster-group">
+    <div class="roster-group-head"><span>PITCHERS</span><b id="pitcher-roster-count">0 / 5</b></div>
+    <div id="pitcher-roster" class="roster-grid"></div>
+  </div>
+</div>
+</section>
+<section class="stats-panel">
+  <div class="stat-main"><span>AVG FB</span><b id="avg-fb">—</b></div>
+  <div class="stat-main"><span>AVG BRK</span><b id="avg-brk">—</b></div>
+  <div class="stat-main"><span>AVG OFF</span><b id="avg-off">—</b></div>
+  <div class="bonus"><span>SEASON DIVERSITY</span><b id="bonus-season">+0</b><small id="season-detail">0 seasons</small></div>
+  <div class="bonus"><span>SERIES DIVERSITY</span><b id="bonus-series">+0</b><small id="series-detail">0 series</small></div>
+  <div class="bonus"><span>RATING TOTAL</span><b id="bonus-rating">+0</b><small id="rating-detail">0 / 0</small></div>
+</section>
+<section id="final-panel" class="final-panel hidden">
+  <div class="final-copy"><p class="eyebrow">DRAFT COMPLETE</p><h2 id="final-title">YOUR PCBL ROSTER</h2><p id="final-summary"></p></div>
+  <div class="final-score"><span>ROSTER SCORE</span><strong id="final-score">0.0</strong><small>Core average + diversity bonuses</small></div>
+  <div class="final-actions"><button id="singleplayer" class="primary">TAKE TEAM INTO SINGLEPLAYER</button><button id="online" class="primary online-primary">TAKE TEAM INTO ONLINE</button><button id="restart" class="utility">DRAFT AGAIN</button></div>
+</section>
+</main>
+<div id="rules" class="modal hidden"><div class="modal-card"><button id="close-rules" class="close">×</button><p class="eyebrow">HOW TO PLAY</p><h2>PCBL DRAFT</h2><ol><li>Draft <strong>12 cards</strong>, choosing one from three options every pick.</li><li>Your final roster must contain exactly <strong>7 hitters and 5 pitchers</strong>.</li><li>Your main ratings are <strong>Average FB, Average BRK, and Average OFF</strong>.</li><li>Earn bonus points for <strong>Season Diversity</strong>, <strong>Series Diversity</strong>, and your <strong>Rating Total</strong>.</li><li>Rarity is calculated from each card's overall rating: Common = bottom 50%, Rare = 50–70%, Epic = 70–90%, Legendary = top 10%.</li><li>When the draft is complete, you can take the exact same 7H / 5P roster into <strong>singleplayer or online ATTAX</strong>.</li></ol><div class="rarity-legend"><span class="common">COMMON</span><span class="rare">RARE</span><span class="epic">EPIC</span><span class="legendary">LEGENDARY</span></div></div></div>
+<script src="cards-data.js"></script><script src="app.js"></script>
+</body></html>

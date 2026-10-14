@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#121713">
+  <meta name="description" content="Play PCBL ATTAX Classic against the CPU or challenge another player from the online lobby.">
+  <title>PCBL ATTAX</title>
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../arcade-back.css"></head>
+<body><a class="arcade-back" href="../../" aria-label="Back to PCBL Arcade"><span>← BACK TO PCBL ARCADE</span><span>✳</span></a>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <button class="brand" id="new-game-logo" aria-label="Start a new game">
+      <span>PCBL</span>
+      <strong>ATTAX</strong>
+    </button>
+    <div class="stadium">
+      <span class="stadium-dot" aria-hidden="true"></span>
+      PCBL STANDARD FIELD
+      <small>STANDARD · NO MODIFIER</small>
+    </div>
+    <button class="utility-button" id="rules-button">RULES</button>
+  </header>
+
+  <main class="game-shell">
+    <section class="scoreboard" aria-label="Scoreboard">
+      <div class="score-stack">
+        <div class="score-team">
+          <span>AWAY</span>
+          <strong id="away-name">YOU</strong>
+          <b id="away-score">0</b>
+        </div>
+        <div class="score-team home-team">
+          <span>HOME</span>
+          <strong id="home-name">CPU</strong>
+          <b id="home-score">0</b>
+        </div>
+      </div>
+      <div class="inning-panel">
+        <span id="inning-half">TOP</span>
+        <strong id="inning-number">1</strong>
+        <small>INNING</small>
+      </div>
+    </section>
+
+    <section class="game-board">
+      <div class="board-tools">
+        <div aria-hidden="true"></div>
+        <div class="dice-zone">
+          <span class="dice-title">DICE</span>
+          <button class="die" id="die" type="button" aria-label="Roll dice">—</button>
+          <small>TAP TO ROLL</small>
+        </div>
+        <aside class="pitch-key" aria-label="Dice pitch key">
+          <strong>DICE KEY</strong>
+          <div><b>1–2</b><span class="key-fb">FB</span></div>
+          <div><b>3–4</b><span class="key-brk">BRK</span></div>
+          <div><b>5–6</b><span class="key-off">OFF</span></div>
+        </aside>
+      </div>
+
+      <article class="card-zone">
+        <div class="zone-label">
+          <span id="batter-owner">YOUR</span> HITTER
+        </div>
+        <div class="playing-card" id="hitter-card">
+          <div class="card-face card-back">
+            <span>PCBL</span>
+            <strong>ATTAX</strong>
+            <small>HITTING</small>
+          </div>
+          <div class="card-face card-front">
+            <img id="hitter-image" alt="">
+          </div>
+        </div>
+        <p class="card-caption" id="hitter-caption">Hidden card</p>
+      </article>
+
+      <section class="matchup-center">
+        <div class="status-strip" id="status-strip">Cards shuffled. Ready for the first pitch.</div>
+
+        <div class="diamond" aria-label="Base runners">
+          <div class="base second" id="base-second"><span>2</span></div>
+          <div class="base third" id="base-third"><span>3</span></div>
+          <div class="base first" id="base-first"><span>1</span></div>
+          <div class="plate" aria-hidden="true"></div>
+        </div>
+
+        <div class="outs-row" aria-label="Outs">
+          <span>OUTS</span>
+          <i id="out-one"></i>
+          <i id="out-two"></i>
+        </div>
+
+        <div class="pitch-result">
+          <span id="pitch-label">PITCH TYPE</span>
+          <strong id="matchup-values">—</strong>
+        </div>
+
+        <div class="result-banner" id="result-banner" aria-live="polite">
+          <span>READY</span>
+          <strong id="result-text">PLAY BALL</strong>
+        </div>
+
+        <button class="action-button" id="action-button">ROLL DICE</button>
+      </section>
+
+      <article class="card-zone">
+        <div class="zone-label">
+          <span id="pitcher-owner">CPU</span> PITCHER
+        </div>
+        <div class="playing-card" id="pitcher-card">
+          <div class="card-face card-back">
+            <span>PCBL</span>
+            <strong>ATTAX</strong>
+            <small>PITCHING</small>
+          </div>
+          <div class="card-face card-front">
+            <img id="pitcher-image" alt="">
+          </div>
+        </div>
+        <p class="card-caption" id="pitcher-caption">Hidden card</p>
+      </article>
+    </section>
+
+    <section class="game-log" aria-label="Game log">
+      <div class="log-heading">
+        <strong>GAME LOG</strong>
+        <span id="at-bat-count">AT BAT 1</span>
+      </div>
+      <div class="log-body">
+        <div class="log-tabs" id="log-tabs" role="tablist" aria-label="Game log innings"></div>
+        <ol id="log-list" aria-live="polite"></ol>
+        <div class="log-actions">
+          <button type="button" id="share-log" hidden>SHARE FULL LOG (.TXT)</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="start-overlay" id="start-overlay">
+    <div class="start-card">
+      <div class="start-mark"><span>PCBL</span><strong>ATTAX</strong></div>
+      <p id="start-mode-label">CLASSIC · PLAYER VS CPU</p>
+      <h1>Every game starts with a completely random draw.</h1>
+      <div class="mode-choice" role="group" aria-label="Choose game mode">
+        <button type="button" data-mode="cpu" class="selected" aria-pressed="true">VS CPU</button>
+        <button type="button" data-mode="online" aria-pressed="false">ONLINE</button>
+      </div>
+      <ul>
+        <li>7 hitters + 5 pitchers per side</li>
+        <li>2 outs · 3 innings · extras if tied</li>
+        <li>No deck building. No card selection.</li>
+      </ul>
+      <div class="side-choice">
+        <span>HOME / AWAY PREFERENCE</span>
+        <div class="side-options" role="group" aria-label="Choose home or away">
+          <button type="button" data-side="away" aria-pressed="false">AWAY</button>
+          <button type="button" data-side="random" class="selected" aria-pressed="true">RANDOM</button>
+          <button type="button" data-side="home" aria-pressed="false">HOME</button>
+        </div>
+      </div>
+      <div class="online-panel" id="online-panel" hidden>
+        <div class="lobby-entry public-ready" id="lobby-entry">
+          <label class="online-name">DISPLAY NAME<input id="online-name" maxlength="18" autocomplete="nickname" placeholder="PLAYER"></label>
+          <button type="button" class="lobby-enter" id="enter-lobby">READY UP</button>
+          <button class="text-button cancel-online" id="cancel-challenge" type="button" hidden>CANCEL READY UP</button>
+        </div>
+        <div class="lobby-shell" id="lobby-shell" hidden></div>
+        <div class="online-status ready" id="online-status" aria-live="polite">READY UP TO ENTER PUBLIC MATCHMAKING.</div>
+        <div class="matchmaking-live-wrap" id="matchmaking-live-wrap" hidden>
+          <span>LIVE MATCHMAKING LINK</span>
+          <input id="matchmaking-live-url" readonly aria-label="Live matchmaking URL">
+        </div>
+        <p class="matchmaking-note">PUBLIC QUEUE · FIRST READY PLAYER WAITS · NEXT READY PLAYER IS MATCHED AUTOMATICALLY</p>
+      </div>
+      <button class="action-button start-button" id="play-button">PLAY VS CPU</button>
+      <button class="text-button" id="start-rules-button">VIEW RULES</button>
+    </div>
+  </div>
+
+  <dialog id="rules-dialog">
+    <div class="dialog-head">
+      <div><span>PCBL ATTAX</span><strong>CLASSIC RULES</strong></div>
+      <button id="close-rules" aria-label="Close rules">×</button>
+    </div>
+    <div class="rules-copy">
+      <p>Choose to play as the home team, away team or let the game decide randomly. Both sides receive seven random hitters and five random pitchers in a fixed, hidden order. Hitters and pitchers both rotate after every at-bat. Each pile cycles back to its first card without changing order.</p>
+      <ol>
+        <li>Roll the die: 1–2 is <b>FB</b>, 3–4 is <b>BRK</b>, and 5–6 is <b>OFF</b>.</li>
+        <li>Both cards flip and the matching pitch ratings are compared.</li>
+        <li>If the hitter is higher, use the hitter card’s result. If the pitcher is higher, the batter is out.</li>
+        <li>Equal ratings are always a walk.</li>
+        <li>After two outs, switch sides. Play three innings; ties continue into extras.</li>
+      </ol>
+      <p class="rules-note">One fixed standard stadium is active. Power cards are not used. In online games, the defending player rolls and advances the at-bat. PCBL Draft rosters can be carried into online play; each player keeps their own drafted 7-hitter / 5-pitcher team.</p>
+    </div>
+  </dialog>
+
+  <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
+  <script src="app.js"></script>
+<script src="../../arcade-top.js"></script></body>
+</html>

@@ -1,0 +1,325 @@
+:root{--lime:#cbff87;--red:#ff342d;--ink:#080a0d;--panel:#11161be8;--line:#303942;--muted:#92a0aa;--white:#f3f6f7}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;background:#050708;color:var(--white);font-family:Arial,Helvetica,sans-serif;overflow:hidden}button,select,input{font:inherit}.screen{position:absolute;inset:0;display:none}.screen.active{display:block}.grain{position:absolute;inset:0;opacity:.13;pointer-events:none;background-image:radial-gradient(#fff 0.7px,transparent .7px);background-size:4px 4px;mix-blend-mode:overlay}.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,#000d 0 36%,#0003 68%,#0009),linear-gradient(180deg,#080c10aa,#0009),url('assets/parks/murphy_preview.jpg') center/cover no-repeat;filter:saturate(.72) contrast(1.08)}header{position:relative;z-index:2;display:flex;align-items:center;gap:20px;padding:32px 42px}header .logo{width:78px;height:78px;object-fit:contain;filter:drop-shadow(0 7px 20px #000)}h1{margin:0;font-size:58px;letter-spacing:-4px;line-height:.86}h1 span{display:block;color:var(--lime);font-size:33px;letter-spacing:4px}header p{margin:9px 0 0;letter-spacing:5px;color:#b5c0c7;font-weight:700;font-size:12px}.glass{background:linear-gradient(180deg,#151b20ed,#090d10ed);border:1px solid #53606b;box-shadow:0 28px 80px #000a, inset 0 1px #ffffff10}.menu-panel{position:absolute;z-index:2;left:43px;top:215px;width:430px;padding:28px}.eyebrow{font-size:12px;letter-spacing:4px;font-weight:900;color:var(--lime);margin-bottom:12px}.primary,.ghost{border:0;cursor:pointer;font-weight:900;letter-spacing:2px;text-transform:uppercase}.primary{background:var(--lime);color:#080b08;padding:15px 22px;box-shadow:inset 0 -4px #5d8529}.primary:hover{filter:brightness(1.08)}.primary:disabled{opacity:.5;cursor:not-allowed}.big{width:100%;font-size:24px;padding:19px}.ghost{color:white;background:#111922c9;border:1px solid #53606b;padding:12px 17px}.corner{position:absolute;right:34px;bottom:30px;z-index:3}.status{margin-top:16px;color:#a8b5bd;font-size:12px;letter-spacing:1.5px;min-height:16px}.controls-mini{margin-top:26px;padding-top:18px;border-top:1px solid #2a343c;color:#9ba8b0;font:11px/1.85 monospace}.controls-mini b{color:white}.topbar{height:75px;background:#0a0d10ed;border-bottom:1px solid #3a444c;display:flex;align-items:center;gap:15px;padding:0 25px;position:relative;z-index:5}.topbar img{height:48px;width:48px;object-fit:contain}.topbar b{font-size:23px;letter-spacing:1px}.topbar span{margin-left:auto;color:#9ba5ac;font-size:12px;letter-spacing:2px}.select-screen{background:radial-gradient(circle at 50% 30%,#25303a 0,#090d11 58%,#050709)}.season-tabs{height:56px;display:flex;justify-content:center;gap:7px;padding:10px}.season-tabs button{background:#11171c;border:1px solid #323c45;color:#aeb8bf;padding:8px 19px;font-weight:900}.season-tabs button.active{background:var(--lime);color:#071006}.versus-select{height:calc(100% - 245px);display:grid;grid-template-columns:1fr 100px 1fr;gap:12px;align-items:center;padding:0 7vw}.versus-mark{text-align:center;font-size:54px;font-weight:1000;font-style:italic;color:#54606a}.player-card{height:100%;max-height:530px;position:relative;border:1px solid #39454f;background:linear-gradient(160deg,#182028,#080b0e);overflow:hidden;padding:26px;box-shadow:0 22px 50px #0008}.player-card:after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 0 38%,#ffffff08 42%,transparent 46%);pointer-events:none}.card-name{font-size:48px;font-weight:1000;letter-spacing:-2px;position:relative;z-index:2}.card-season{color:var(--lime);font-weight:900;letter-spacing:3px;position:relative;z-index:2}.card-body{display:grid;grid-template-columns:200px 1fr;gap:20px;height:calc(100% - 78px);align-items:center}.portrait{height:310px;display:flex;align-items:end;justify-content:center;position:relative}.portrait canvas{height:100%;width:100%}.ratings{display:grid;grid-template-columns:1fr 1fr;gap:10px}.rating{background:#0a0e12aa;border-left:3px solid var(--lime);padding:8px 11px}.rating label{display:block;font-size:10px;color:#98a4ad;letter-spacing:1px}.rating b{font-size:27px}.rawline{grid-column:1/-1;color:#8f9ca5;font-size:11px;line-height:1.6}.roster-strip{height:70px;display:flex;justify-content:center;gap:6px}.roster-strip button{min-width:115px;background:#10161c;border:1px solid #35414a;color:white;font-weight:900}.roster-strip button.active{border-color:var(--lime);box-shadow:inset 0 -4px var(--lime)}.lock-btn{position:absolute;right:27px;bottom:21px}.stadium-screen{background:#080b0d}.stadium-grid{height:calc(100% - 125px);display:grid;grid-template-columns:repeat(3,1fr);gap:15px;padding:25px}.stadium-card{position:relative;overflow:hidden;border:2px solid #343f48;cursor:pointer;background:#111}.stadium-card:hover,.stadium-card.selected{border-color:var(--lime)}.stadium-card img{width:100%;height:100%;object-fit:cover;filter:saturate(.72) contrast(1.1)}.stadium-card .shade{position:absolute;inset:0;background:linear-gradient(transparent 40%,#000e)}.stadium-info{position:absolute;left:22px;right:22px;bottom:20px}.stadium-info h3{font-size:27px;margin:0 0 5px}.stadium-info p{margin:0;color:#c0c8cd;font-size:12px}.center{text-align:center;margin:0;height:50px}.intro-screen,.game-screen{background:#000}canvas{width:100%;height:100%;display:block;image-rendering:auto}.intro-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:0 5vw 7vh;background:linear-gradient(transparent 55%,#000c)}.intro-title{font-size:49px;font-weight:1000;letter-spacing:-2px}.intro-overlay #introSub{letter-spacing:3px;color:#c1cad0;margin:7px 0 19px}.scorebug{position:absolute;right:20px;top:20px;min-width:310px;background:#f8f8f5;color:#080808;border:3px solid #111;box-shadow:0 5px 18px #0007;font-weight:900}.score-row{display:grid;grid-template-columns:1fr 52px 92px;align-items:center;border-bottom:2px solid #111;height:47px}.score-row>*{padding:0 12px}.score-num{font-size:29px;text-align:center;border-left:2px solid #111;border-right:2px solid #111}.score-mini{font-size:11px}.inningbar{background:#101214;color:white;padding:8px 11px;font-size:11px;display:flex;justify-content:space-between}.pitch-hud{position:absolute;left:20px;bottom:20px;width:295px;background:#080d11dd;border:1px solid #53606b;padding:12px;display:none}.pitch-hud.show{display:block}.pitch-hud button{display:block;width:100%;text-align:left;background:#151d24;color:white;border:1px solid #303b44;padding:9px;margin:5px 0}.pitch-hud button.active{border-color:var(--lime);color:var(--lime)}.pitch-hud small{float:right;color:#93a0aa}.bat-hud{position:absolute;left:50%;transform:translateX(-50%);bottom:20px;display:none;gap:6px}.bat-hud.show{display:flex}.bat-hud span{background:#080d11e6;border:1px solid #49545e;padding:10px 13px;font-size:11px;font-weight:900}.callout{position:absolute;left:50%;top:20%;transform:translateX(-50%);font-weight:1000;font-style:italic;font-size:54px;text-shadow:0 5px 18px #000;opacity:0;transition:.15s}.callout.show{opacity:1}.transition{position:absolute;inset:0;background:#0c1115;display:flex;align-items:center;justify-content:center;gap:20px;transform:translateX(-102%);z-index:20}.transition img{width:120px}.transition span{font-size:58px;font-weight:1000;letter-spacing:7px}.transition.play{animation:wipe .72s ease-in-out}@keyframes wipe{0%{transform:translateX(-102%)}35%,65%{transform:translateX(0)}100%{transform:translateX(102%)}}.post-screen{background:linear-gradient(#0a0d10e8,#050709f4),url('assets/refs/3.png') center/cover}.post-wrap{width:min(850px,90vw);margin:7vh auto;padding:35px}.post-wrap h2{font-size:55px;margin:5px 0 22px}.boxscore{border:1px solid #46515b}.boxrow{display:grid;grid-template-columns:170px repeat(5,1fr);border-bottom:1px solid #343e46}.boxrow>*{padding:10px;border-right:1px solid #343e46}.boxrow.head{color:#9da8af;font-size:11px}.post-summary{padding:17px 0;color:#b5bec5}.lab-screen{background:#070a0d}.lab-wrap{width:min(1000px,92vw);margin:45px auto}.lab-wrap p{color:#98a5ad}.clip-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}.clip-grid label{background:#111820;border:1px solid #3d4952;padding:14px;font-weight:900;letter-spacing:1px}.clip-grid input{display:block;margin:12px 0}.clip-grid video{width:100%;height:260px;background:#000;object-fit:contain}@media(max-width:900px){h1{font-size:40px}.versus-select{padding:0 2vw}.card-body{grid-template-columns:130px 1fr}.stadium-grid{grid-template-columns:1fr}.stadium-card{min-height:180px}.stadium-screen{overflow:auto}.scorebug{transform:scale(.78);transform-origin:top right}.clip-grid{grid-template-columns:1fr}}
+
+.screen.active{animation:screenIn .28s ease-out}.player-card{transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}.player-card:hover{transform:translateY(-4px);border-color:#657581;box-shadow:0 30px 70px #000a}.roster-strip button,.season-tabs button,.stadium-card{transition:.22s ease}@keyframes screenIn{from{opacity:0;transform:scale(1.008)}to{opacity:1;transform:scale(1)}}
+
+.single-btn{margin-top:10px;background:#10161c;color:#fff;box-shadow:none;border:1px solid #596670}.single-btn:hover{border-color:var(--lime);color:var(--lime)}
+.intro-stats{position:absolute;z-index:4;left:4vw;right:4vw;top:7vh;display:grid;grid-template-columns:minmax(330px,520px) minmax(330px,520px);justify-content:space-between;gap:5vw;pointer-events:none}
+.intro-stat-card{background:linear-gradient(135deg,#0a0e12e8,#151c22d8);border:1px solid #5b6872;border-top:4px solid var(--lime);box-shadow:0 20px 60px #000a;padding:18px 20px;backdrop-filter:blur(8px)}
+.intro-stat-card.right{text-align:right}.intro-player-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;border-bottom:1px solid #44505a;padding-bottom:10px;margin-bottom:12px}.intro-stat-card.right .intro-player-head{flex-direction:row-reverse}.intro-player-head strong{font-size:32px;line-height:.9;letter-spacing:-1px}.intro-player-head span{font:900 10px/1 Arial;letter-spacing:2px;color:var(--lime)}
+.intro-line{display:grid;grid-template-columns:125px repeat(4,1fr);align-items:end;gap:9px;padding:8px 0}.intro-stat-card.right .intro-line{grid-template-columns:repeat(4,1fr) 125px}.intro-line+.intro-line{border-top:1px solid #273038}.intro-line .role{font-size:10px;letter-spacing:1.6px;color:#aeb8bf;font-weight:900}.intro-stat-card.right .intro-line .role{order:5;text-align:right}.intro-metric{display:flex;flex-direction:column;gap:3px}.intro-metric small{font-size:8px;letter-spacing:1px;color:#87939c}.intro-metric b{font-size:20px}.intro-fallback{font-size:9px;color:#f3c26b;letter-spacing:1.2px;margin-top:8px}
+@media(max-width:900px){.intro-stats{grid-template-columns:1fr;top:3vh;gap:8px}.intro-stat-card{padding:10px 12px}.intro-player-head strong{font-size:22px}.intro-line{grid-template-columns:90px repeat(4,1fr);padding:5px 0}.intro-stat-card.right .intro-line{grid-template-columns:repeat(4,1fr) 90px}.intro-metric b{font-size:15px}.intro-overlay{padding-bottom:3vh}.intro-title{font-size:34px}}
+
+/* ALPHA 6 — visual/gameplay overhaul */
+.player-card{min-width:0}.card-body{grid-template-columns:minmax(150px,44%) minmax(0,1fr)}
+.portrait{height:310px;overflow:hidden;border:1px solid #36414a;background:#06090b;align-items:stretch}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;filter:contrast(1.05) saturate(.92)}
+.ratings{min-width:0}.rawline{overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.stadium-card img{object-position:center center}
+.game-screen{background:#000;align-items:center;justify-content:center}.game-screen.active{display:flex}
+.game-stage{position:relative;width:min(100vw,calc(100vh * 16 / 9));height:min(100vh,calc(100vw * 9 / 16));aspect-ratio:16/9;background:#000;overflow:hidden;box-shadow:0 0 0 1px #20252a,0 0 80px #000}
+.game-stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.game-stage .scorebug,.game-stage .pitch-hud,.game-stage .bat-hud,.game-stage .callout,.game-stage .transition{position:absolute}
+@media(max-width:1100px){.versus-select{padding:0 2vw;grid-template-columns:minmax(0,1fr) 70px minmax(0,1fr)}.card-name{font-size:38px}.card-body{grid-template-columns:140px minmax(0,1fr)}.ratings{gap:6px}.rating{padding:6px 8px}.rating b{font-size:22px}.rawline{font-size:10px}}
+/* Alpha 7 WebGL stage */
+#gameCanvas{display:block;width:100%;height:100%;image-rendering:auto;background:#000}
+.game-screen{display:none;align-items:center;justify-content:center}.game-screen.active{display:flex}
+.intro-screen canvas{position:absolute;inset:0}
+
+/* ALPHA 10 — one persistent 16:9 WebGL surface (prevents intro/game context churn and aspect distortion) */
+.render-slot{position:absolute;inset:0;overflow:hidden;background:#000}
+.render-slot canvas{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:auto}
+#screen-intro.active{display:flex;align-items:center;justify-content:center;background:#000}
+#introRenderSlot{position:relative;inset:auto;width:min(100vw,calc(100vh * 16 / 9));height:min(100vh,calc(100vw * 9 / 16));aspect-ratio:16/9;box-shadow:0 0 0 1px #1a1f23,0 0 70px #000}
+#gameRenderSlot{position:absolute;inset:0}
+
+/* Alpha 11 persistent WebGL surface: never detach/reparent the canvas between intro and game. */
+.render-host{position:absolute;inset:0;background:#000;display:none;z-index:0;overflow:hidden}.render-host.active{display:block}.render-host canvas{position:absolute;inset:0;width:100%;height:100%;display:block}.intro-screen,.game-screen{background:transparent!important;z-index:2}.intro-screen>*:not(.render-slot),.game-screen>*{position:relative;z-index:3}.intro-stats,.intro-overlay,.game-stage,.scorebug,.pitch-hud,.bat-hud,.callout,.transition{z-index:4}.game-stage{position:absolute!important;inset:0}.screen{z-index:5}.screen#screen-intro,.screen#screen-game{z-index:2}.screen:not(#screen-intro):not(#screen-game){background-color:#050708}.render-error-detail{position:absolute;left:50%;top:29%;transform:translateX(-50%);z-index:30;max-width:80%;padding:12px 18px;background:#120b0bd9;border:1px solid #ff5b55;color:#ffd7d5;font:12px/1.45 monospace;display:none;white-space:pre-wrap}.render-error-detail.show{display:block}
+/* Alpha 13 render-stage reliability: one centered 16:9 surface, HUD never covers it with an opaque layer. */
+.render-host{inset:auto!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%);width:min(100vw,calc(100vh * 16 / 9));height:min(100vh,calc(100vw * 9 / 16));aspect-ratio:16/9;background:#050708;z-index:1}
+.render-host canvas{width:100%!important;height:100%!important}
+.game-stage{left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;transform:translate(-50%,-50%);background:transparent!important;pointer-events:none}
+.game-stage .pitch-hud,.game-stage .bat-hud{pointer-events:auto}
+.intro-screen,.game-screen{background:transparent!important}
+.callout{pointer-events:none}
+
+
+/* ALPHA 14 — animated 3D sitcom-style presentation */
+:root{--lime:#f7dc35;--cartoon-blue:#88c9f2;--ink:#171717}
+.menu-screen,.select-screen,.stadium-screen,.post-screen{font-family:Arial,Helvetica,sans-serif}
+.topbar{border-bottom:4px solid var(--ink);background:#f6f1df;color:#171717;box-shadow:0 4px 0 #0004}
+.topbar span{color:#505050}.season-tabs button,.roster-strip button,.primary,.ghost,.single-btn{border-width:3px;border-color:#171717;box-shadow:3px 4px 0 #171717;border-radius:9px;font-weight:1000}
+.primary{background:#f7dc35;color:#171717}.primary:hover{background:#ffe95b;color:#171717}.ghost,.single-btn{background:#f5f0de;color:#171717}.ghost:hover,.single-btn:hover{border-color:#171717;color:#171717;background:#fff7cc}
+.player-card{border:4px solid #171717;border-radius:16px;background:#f7f2df;color:#171717;box-shadow:8px 10px 0 #171717;overflow:hidden}.player-card.remote{background:#edf4fa}.card-season{color:#171717}.card-name{color:#171717}.rating{background:#ffffff;border:2px solid #171717;border-left:8px solid #f7dc35;border-radius:7px}.rating label,.rawline{color:#444}.rating b{color:#171717}.portrait{border:3px solid #171717;border-radius:10px}.versus-mark{color:#f7dc35;text-shadow:3px 3px 0 #171717}
+.stadium-card{border:4px solid #171717;border-radius:15px;box-shadow:7px 8px 0 #171717}.stadium-card.selected{border-color:#f7dc35;box-shadow:7px 8px 0 #171717,0 0 0 5px #f7dc35}.stadium-info{background:#f6f1df;color:#171717;border-top:3px solid #171717}.stadium-info p{color:#4e4e4e}
+.scorebug{border:4px solid #171717;border-radius:10px;overflow:hidden;background:#f7f2df;box-shadow:7px 8px 0 #0007}.score-row{background:#fff;border-bottom:3px solid #171717}.inningbar{background:#171717;color:#fff}.pitch-hud{border:4px solid #171717;border-radius:10px;background:#f7f2df;color:#171717;box-shadow:6px 7px 0 #0008}.pitch-hud button{background:#fff;color:#171717;border:2px solid #171717;border-radius:7px}.pitch-hud button.active{background:#f7dc35;color:#171717;border-color:#171717}.pitch-hud small{color:#555}.bat-hud span{background:#f7f2df;color:#171717;border:3px solid #171717;border-radius:7px;box-shadow:3px 4px 0 #0008}.callout{color:#f7dc35;text-shadow:4px 4px 0 #171717}.intro-stat-card{background:#f7f2df;color:#171717;border:4px solid #171717;border-top:9px solid #f7dc35;border-radius:12px;box-shadow:7px 8px 0 #0008}.intro-player-head span{color:#806f00}.intro-line .role,.intro-metric small{color:#555}.intro-line+.intro-line,.intro-player-head{border-color:#999}.intro-overlay{background:linear-gradient(transparent 55%,rgba(23,23,23,.86))}.intro-title{color:#f7dc35;text-shadow:4px 4px 0 #171717}
+
+/* ALPHA 16 INPUT ROUTING: gameplay overlay must never swallow field controls. */
+#renderHost.active{pointer-events:auto}
+#gameCanvas{pointer-events:auto;cursor:crosshair}
+#screen-game{pointer-events:none}
+#screen-game .pitch-hud,#screen-game .bat-hud,#screen-game button,#screen-game .transition{pointer-events:auto}
+#screen-intro{pointer-events:none}
+#screen-intro #skipIntro{pointer-events:auto}
+
+/* ALPHA 33 — scorebook / landing-zone log */
+.scorebook-title{margin:12px 0 7px;font-size:11px;letter-spacing:3px;font-weight:1000;color:var(--lime)}
+.scorebook-log{max-height:150px;overflow:auto;border:1px solid #36414a;background:#080c10aa;margin-bottom:14px}
+.scorebook-row{display:grid;grid-template-columns:78px 1fr 1.25fr 86px;gap:9px;align-items:center;padding:8px 10px;border-bottom:1px solid #28323a;font-size:10px}
+.scorebook-row:last-child{border-bottom:0}.scorebook-row b{color:#aeb9c0}.scorebook-row strong{color:#fff}.scorebook-row small{text-align:right;color:#8f9ca5}
+.post-wrap{max-height:88vh;overflow:auto}
+
+/* Alpha 34 batting timing feedback */
+.timing-feedback{position:absolute;left:50%;top:31%;transform:translate(-50%,-8px);width:300px;padding:10px 14px 9px;background:#0b0e11e8;border:3px solid #171717;border-radius:9px;box-shadow:5px 6px 0 #0008;opacity:0;pointer-events:none;z-index:8;transition:opacity .12s ease,transform .12s ease;text-align:center}
+.timing-feedback.show{opacity:1;transform:translate(-50%,0)}
+.timing-label{font-size:24px;font-weight:1000;font-style:italic;letter-spacing:2px;color:#f7dc35;text-shadow:2px 2px 0 #000}
+.timing-detail{font:700 10px/1.2 monospace;letter-spacing:1px;color:#c9d0d5;margin:2px 0 7px}
+.timing-meter{height:12px;background:linear-gradient(90deg,#a94040 0 28%,#d5a83a 38%,#6bb56d 46% 54%,#d5a83a 62%,#a94040 72% 100%);border:2px solid #f3f6f7;position:relative;border-radius:3px;overflow:visible}
+.timing-good-zone{position:absolute;left:44%;width:12%;top:-2px;bottom:-2px;border-left:1px solid #fff8;border-right:1px solid #fff8}
+.timing-tick{position:absolute;top:-7px;width:4px;height:23px;background:#fff;border:1px solid #111;box-shadow:1px 1px 0 #000;left:50%;transform:translateX(-50%)}
+.timing-ends{display:flex;justify-content:space-between;font:800 9px monospace;color:#9ba8b0;margin-top:4px;letter-spacing:1px}
+
+/* Alpha 39: professional base-runner diamond */
+.inning-state{display:flex;align-items:center;gap:9px;white-space:nowrap}.base-diamond{position:relative;display:inline-block;width:34px;height:24px;margin-left:2px;flex:0 0 34px}.base-marker{position:absolute;width:9px;height:9px;border:2px solid #f7f2df;background:#171717;transform:rotate(45deg);box-shadow:0 0 0 1px #171717}.base-marker.occupied{background:#f7dc35}.base-second{left:13px;top:1px}.base-third{left:4px;top:10px}.base-first{left:22px;top:10px}
+
+/* Alpha 41 pause / camera / audio */
+.pause-btn{position:absolute;left:20px;top:20px;z-index:16;width:42px;height:42px;border:1px solid #65717a;background:#090e12dd;color:#fff;font-weight:1000;font-size:18px;cursor:pointer;box-shadow:0 5px 18px #0008}.pause-btn:hover{border-color:var(--lime);color:var(--lime)}
+.pause-overlay{position:absolute;inset:0;z-index:60;display:none;align-items:center;justify-content:center;background:#020406b8;backdrop-filter:blur(5px);pointer-events:auto}.pause-overlay.show{display:flex}.pause-panel{width:min(430px,90vw);padding:30px 32px;text-align:center}.pause-panel h2{font-size:52px;letter-spacing:4px;margin:2px 0 22px}.pause-action{width:100%;margin:7px 0}.pause-setting{text-align:left;margin:18px 0}.pause-setting label{display:flex;justify-content:space-between;font-size:11px;letter-spacing:2px;font-weight:900;color:#b9c4ca;margin-bottom:8px}.pause-setting output{color:var(--lime)}.pause-setting input{width:100%;accent-color:var(--lime)}.pause-audio-note{font:10px monospace;letter-spacing:1px;color:#82919a;margin:15px 0}.pause-panel .exit{border-color:#854b4b}.pause-panel>small{display:block;margin-top:14px;color:#7f8d95;letter-spacing:2px}.game-screen.paused .pitch-hud,.game-screen.paused .bat-hud{opacity:.25}.game-screen.paused canvas{filter:saturate(.72) brightness(.68)}
+
+.pause-overlay input,.pause-overlay button{pointer-events:auto}
+
+/* Alpha 44 card presentation */
+.card-overall{grid-column:1/-1;display:flex;align-items:flex-end;justify-content:space-between;background:#171717;color:#f7dc35;border-radius:8px;padding:6px 12px 7px;margin-bottom:2px;box-shadow:inset 0 -3px #0003}.card-overall span{font-size:13px;font-weight:1000;letter-spacing:3px}.card-overall b{font-size:56px;line-height:.88;letter-spacing:-3px}.rawline{grid-column:1/-1;text-align:center;font-size:11px;font-weight:900;letter-spacing:.6px;line-height:1.4;-webkit-line-clamp:1}.player-card .ratings{align-content:center}
+@media(max-width:1100px){.card-overall b{font-size:45px}.card-overall span{font-size:11px}}
+
+
+/* Alpha 45 — desktop/computer compatibility gate */
+.computer-required-screen{background:#050708;overflow:hidden}
+.computer-required-screen .hero-bg{filter:saturate(.66) contrast(1.10) brightness(.72)}
+.computer-required-wrap{position:absolute;inset:0;z-index:3;display:flex;align-items:center;justify-content:center;padding:28px}
+.computer-required-panel{width:min(620px,92vw);padding:36px 38px 34px;text-align:center;border:3px solid #171717;border-radius:14px;box-shadow:10px 12px 0 #171717,0 35px 100px #000b;background:linear-gradient(180deg,#f7f2df 0%,#eee7d1 100%);color:#171717}
+.computer-required-logo{display:block;width:92px;height:92px;object-fit:contain;margin:0 auto 10px;filter:drop-shadow(0 5px 0 #0003)}
+.computer-required-panel .eyebrow{color:#806f00;margin-bottom:8px}
+.computer-required-panel h2{margin:0 0 12px;font-size:52px;line-height:.95;letter-spacing:-2px;font-weight:1000}
+.computer-required-panel>p{margin:0 auto 20px;max-width:480px;font-size:20px;font-weight:900;line-height:1.25}
+.computer-required-controls{margin:0 0 24px;padding:15px 16px;background:#171717;color:#fff;border-radius:9px;text-align:left}
+.computer-required-controls b{display:block;color:#f7dc35;font-size:12px;letter-spacing:2px;margin-bottom:6px}
+.computer-required-controls span{display:block;font-size:12px;line-height:1.45;color:#d8dde0}
+#computerContinue{margin-top:2px}
+@media(max-width:640px){.computer-required-panel{padding:28px 22px}.computer-required-panel h2{font-size:39px}.computer-required-panel>p{font-size:17px}.computer-required-logo{width:76px;height:76px}}
+
+
+/* ALPHA 46 — PCBL VERSUS RETRO INTRO + MENU LOOP */
+.versus-intro-screen{background:radial-gradient(circle at 50% 30%,#2b1d59 0%,#12081c 42%,#040507 100%);overflow:hidden}
+.versus-intro-canvas,.menu-loop-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated}
+.versus-intro-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 4vw 7vh;z-index:6;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.45) 70%,rgba(0,0,0,.78))}
+.versus-tag{font:900 12px/1 Arial,sans-serif;letter-spacing:4px;color:#ffe66d;margin-bottom:14px;text-shadow:3px 3px 0 #101010}
+.versus-intro-title{font:900 clamp(46px,8vw,110px)/.92 Arial,sans-serif;letter-spacing:-4px;color:#fff36d;text-transform:uppercase;text-shadow:5px 5px 0 #111,10px 10px 0 rgba(255,61,143,.35)}
+.versus-intro-subtitle{margin:12px 0 20px;font:900 clamp(15px,2vw,24px)/1 Arial,sans-serif;letter-spacing:5px;color:#d6e8ff;text-shadow:3px 3px 0 #101010}
+.start-game-btn{max-width:420px;transition:opacity .25s ease,transform .25s ease;box-shadow:0 8px 0 #5d8529,0 18px 40px rgba(0,0,0,.35)}
+.start-game-btn.hidden{opacity:0;pointer-events:none;transform:translateY(20px)}
+.versus-intro-hint{margin-top:14px;font:700 13px/1.4 monospace;letter-spacing:2px;color:#d2d7de;text-shadow:2px 2px 0 #111}
+.menu-screen{overflow:hidden}
+.menu-loop-canvas{z-index:1;opacity:.98}
+.menu-loop-backdrop{display:none}
+.menu-screen .grain{z-index:3}
+.menu-header{justify-content:center;text-align:center;padding-top:30px;padding-bottom:10px}
+.menu-header p{margin-top:8px}
+.menu-panel{left:50%;top:54%;transform:translate(-50%,-50%);width:min(500px,88vw);text-align:center;background:linear-gradient(180deg,rgba(20,26,32,.92),rgba(8,11,14,.92));backdrop-filter:blur(2px);z-index:5}
+.menu-panel .controls-mini{text-align:left}
+.menu-screen .primary.big,.menu-screen .ghost.big{font-size:27px}
+@media(max-width:900px){.menu-panel{top:58%;width:min(92vw,520px)}.menu-header{padding-top:22px}.menu-header h1{font-size:40px}.menu-header h1 span{font-size:28px}}
+
+
+/* ALPHA 47 — simplified PCBL VERSUS intro */
+.versus-intro-screen{background:#060714!important;overflow:hidden}
+.versus-intro-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;image-rendering:pixelated;filter:saturate(.96) contrast(1.08)}
+.versus-intro-overlay{position:absolute;inset:0;z-index:7;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4vh 4vw 7vh;background:linear-gradient(180deg,rgba(3,5,12,.03),rgba(3,5,12,.04) 58%,rgba(3,5,12,.34));pointer-events:none}
+.versus-logo{width:clamp(82px,9vw,138px);height:clamp(82px,9vw,138px);object-fit:contain;margin-bottom:20px;image-rendering:pixelated;filter:drop-shadow(7px 7px 0 rgba(0,0,0,.58))}
+.versus-intro-title{font-family:"Courier New",monospace!important;font-style:italic;font-weight:900;font-size:clamp(58px,10vw,148px)!important;line-height:.82;letter-spacing:-.075em!important;color:#fff141!important;text-transform:uppercase;transform:skewX(-9deg);text-shadow:4px 0 0 #ff4c91,-4px 0 0 #4bdcff,7px 7px 0 #0a0712,11px 11px 0 rgba(0,0,0,.42);white-space:nowrap;image-rendering:pixelated}
+.start-game-btn{pointer-events:auto;margin-top:44px;max-width:380px;font-family:"Courier New",monospace;font-style:italic;clip-path:polygon(3% 0,100% 0,97% 100%,0 100%);border:4px solid #111;box-shadow:8px 8px 0 #111!important}
+.start-game-btn.hidden{display:block!important;opacity:0;pointer-events:none;transform:translateY(18px)}
+.start-game-btn:not(.hidden){opacity:1;transform:translateY(0);animation:retroStartPulse .9s steps(2,end) infinite}
+@keyframes retroStartPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.18)}}
+/* guaranteed visible fallback even if menu canvas cannot render */
+.screen-menu{background:linear-gradient(180deg,#111a2d,#050708)!important}
+.screen-menu.active{display:block!important}
+.menu-header,.menu-panel{visibility:visible!important;opacity:1!important}
+
+/* ALPHA 48 — navigation/performance hardening */
+#app{position:relative;width:100%;height:100%;contain:layout paint style}
+.screen{backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translateZ(0);contain:layout paint style}
+.screen.active{visibility:visible}
+.menu-loop-canvas,.versus-intro-canvas,.render-host canvas{will-change:transform;backface-visibility:hidden}
+.stadium-card img,.portrait img,.topbar img,.menu-header img,.versus-logo,.computer-required-logo{content-visibility:auto}
+
+
+/* ALPHA 50 — Real Stuy Town aerial background for ready-up menu */
+.menu-loop-canvas{display:none !important}
+.menu-loop-backdrop{display:block !important;position:absolute;inset:0;z-index:1;
+  background-image:linear-gradient(180deg,rgba(7,10,18,.18),rgba(7,10,18,.38) 54%,rgba(4,6,10,.62)), url("assets/menu/stuytown-aerial-menu.jpg");
+  background-size:cover;background-position:center center;background-repeat:no-repeat;
+  animation:menuKenBurns 22s ease-in-out infinite alternate;transform-origin:center center;filter:saturate(1.04) contrast(1.02)}
+.menu-screen::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(circle at 50% 28%,rgba(255,255,255,.04),transparent 35%),linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.24) 38%,rgba(0,0,0,.52));}
+.menu-header,.menu-panel{z-index:5}
+.menu-header{padding-top:28px;text-shadow:0 4px 12px rgba(0,0,0,.42)}
+.menu-header h1{color:#fff6a6}.menu-header p{color:#e6edf7}
+@keyframes menuKenBurns{0%{transform:scale(1.02) translate3d(0,0,0)}50%{transform:scale(1.06) translate3d(0,-1.2%,0)}100%{transform:scale(1.09) translate3d(-1.3%,1.0%,0)}}
+
+
+/* ALPHA 55 — horizontal PCI, intro-volume reduction, visual polish pass */
+:root{--lime:#d2ff8e;--gold:#fff141;--panelGlow:0 18px 50px rgba(0,0,0,.34);--softBorder:rgba(255,255,255,.10)}
+html,body{background:radial-gradient(circle at 50% 0%,#172432 0%,#0a1015 35%,#050708 100%)}
+.screen{isolation:isolate}
+.hero-bg{filter:saturate(1.06) contrast(1.06) brightness(.92)}
+.panel,.menu-panel,.pause-panel,.intro-stat-card,.computer-required-panel,.player-card,.stadium-card,.pitch-hud,.scorebug,.post-panel{backdrop-filter:blur(7px)}
+.panel,.menu-panel,.pause-panel,.post-panel{background:linear-gradient(180deg,rgba(17,22,27,.93),rgba(8,12,16,.94));border-color:rgba(255,255,255,.12);box-shadow:0 14px 42px rgba(0,0,0,.44),0 0 0 1px rgba(255,255,255,.04) inset}
+button,.primary,.ghost,.single-btn,.pitch-hud button{transition:transform .12s ease,box-shadow .18s ease,filter .18s ease,background-color .18s ease,border-color .18s ease}
+button:hover,.primary:hover,.ghost:hover,.single-btn:hover,.pitch-hud button:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,0,0,.28)}
+button:active,.primary:active,.ghost:active,.single-btn:active,.pitch-hud button:active{transform:translateY(1px) scale(.995)}
+.menu-panel{background:linear-gradient(180deg,rgba(14,19,25,.84),rgba(8,10,13,.88));border:1px solid rgba(255,255,255,.14);box-shadow:0 20px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.05) inset}
+.menu-header h1,.computer-required-panel h2,.intro-title{filter:drop-shadow(0 10px 18px rgba(0,0,0,.28))}
+.player-card,.stadium-card{transition:transform .14s ease,box-shadow .2s ease,filter .2s ease}
+.player-card:hover,.stadium-card:hover{transform:translateY(-2px);filter:saturate(1.03);box-shadow:10px 12px 0 #171717,0 16px 30px rgba(0,0,0,.18)}
+.portrait,.stadium-image{filter:saturate(1.04) contrast(1.03)}
+.card-overall{background:linear-gradient(180deg,#1c2127,#0f1317);box-shadow:inset 0 -3px rgba(0,0,0,.26),0 1px 0 rgba(255,255,255,.05)}
+.card-overall b{font-size:64px;text-shadow:0 4px 12px rgba(0,0,0,.32)}
+.scorebug{background:linear-gradient(180deg,rgba(247,242,223,.97),rgba(232,226,206,.97));border-color:#131618;box-shadow:0 12px 28px rgba(0,0,0,.34)}
+.score-row{background:linear-gradient(180deg,#fffef8,#f1ebd8)}
+.inningbar{background:linear-gradient(180deg,#2a3238,#171b1f)}
+.pitch-hud{background:linear-gradient(180deg,rgba(247,242,223,.98),rgba(233,227,209,.98));box-shadow:0 12px 30px rgba(0,0,0,.32)}
+.pitch-hud button{box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.pitch-hud button.active{box-shadow:0 4px 0 rgba(0,0,0,.22),0 0 0 1px rgba(255,255,255,.35) inset}
+.bat-hud span{background:linear-gradient(180deg,#fffdf5,#eee6d2);box-shadow:0 10px 20px rgba(0,0,0,.22)}
+.callout{filter:drop-shadow(0 8px 18px rgba(0,0,0,.28))}
+.timing-feedback{background:linear-gradient(180deg,rgba(10,13,17,.95),rgba(6,8,10,.96));box-shadow:0 14px 30px rgba(0,0,0,.35);backdrop-filter:blur(5px)}
+.timing-meter{border-radius:8px;height:13px;box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 0 0 1px rgba(0,0,0,.35)}
+.pause-overlay{background:rgba(2,4,6,.74)}
+.pause-panel h2{filter:drop-shadow(0 6px 12px rgba(0,0,0,.28))}
+.versus-intro-overlay{background:linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.22) 56%,rgba(0,0,0,.62))}
+.versus-intro-title{font-style:italic;letter-spacing:-3px;text-shadow:4px 4px 0 #111,0 0 24px rgba(255,219,120,.20)}
+.start-game-btn{box-shadow:0 10px 0 #688e2f,0 18px 40px rgba(0,0,0,.35)}
+.start-game-btn:hover{filter:brightness(1.03)}
+.menu-screen::before{background:radial-gradient(circle at 50% 25%,rgba(255,255,255,.05),transparent 35%),linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.18) 36%,rgba(0,0,0,.48))}
+#gameCanvas{cursor:crosshair;image-rendering:auto}
+@media(max-width:1100px){.card-overall b{font-size:54px}}
+
+/* ALPHA 64 scorebug numeric centering */
+.score-row{grid-template-columns:minmax(0,1fr) 58px 92px}
+.score-num{display:flex!important;align-items:center;justify-content:center;text-align:center!important;padding:0!important;width:58px;min-width:58px;font-variant-numeric:tabular-nums;font-feature-settings:'tnum' 1;line-height:1}
+
+
+/* ALPHA 67 — compact sleek warm-retro UI overhaul */
+:root{--ui-cream:#f5efdf;--ui-paper:#fffaf0;--ui-ink:#131313;--ui-gold:#f2d148;--ui-shadow:0 10px 28px rgba(0,0,0,.28),0 1px 0 rgba(255,255,255,.14) inset;--ui-font:"Trebuchet MS","Avenir Next Condensed","Arial Narrow",Arial,sans-serif;--ui-mono:"Menlo","Consolas",monospace}
+html,body,button,select,input{font-family:var(--ui-font)}
+.menu-screen,.select-screen,.stadium-screen,.post-screen,.game-screen,.scorebug,.pitch-hud,.bat-hud,.pause-panel,.topbar,.menu-panel,.player-card,.stadium-card{font-family:var(--ui-font)!important}
+.scorebug,.pitch-hud,.bat-hud,.pause-panel,.menu-panel,.intro-stat-card,.player-card,.stadium-card{backdrop-filter:blur(8px)}
+.scorebug{right:14px;top:14px;min-width:252px;max-width:268px;border:2px solid #171717;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,rgba(248,243,228,.96),rgba(238,229,206,.96));color:var(--ui-ink);box-shadow:0 10px 28px rgba(0,0,0,.30),0 0 0 1px rgba(255,255,255,.34) inset;font-weight:900}
+.score-row{display:grid;grid-template-columns:minmax(0,1fr) 52px 74px;align-items:center;min-height:34px;height:34px;border-bottom:1px solid rgba(23,23,23,.88);background:linear-gradient(180deg,rgba(255,251,243,.96),rgba(244,236,219,.96))}
+.score-row>*{padding:0 8px}
+.team-name{font-size:12px;letter-spacing:1.4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.score-num{display:flex;align-items:center;justify-content:center;padding:0;font-size:24px;line-height:1;text-align:center;border-left:1px solid #171717;border-right:1px solid #171717;font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+.score-side{display:flex;align-items:center;justify-content:center;font-size:10px;letter-spacing:1.3px;color:#4f4738;text-transform:uppercase}
+.meta-chip,.count-chip,.outs-chip{display:inline-flex;align-items:center;justify-content:center;min-height:18px;padding:0 7px;border:1px solid rgba(23,23,23,.64);border-radius:999px;background:rgba(255,255,255,.48)}
+.inningbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 8px;background:linear-gradient(180deg,#171717,#0e0e0e);color:#fff;font-size:10px;letter-spacing:1.35px;text-transform:uppercase}
+.inning-state{display:flex;align-items:center;gap:7px}
+.base-diamond{transform:scale(.82);transform-origin:center}
+.pitch-hud{left:14px;bottom:14px;width:244px;padding:8px 8px 7px;border:2px solid #171717;border-radius:14px;background:linear-gradient(180deg,rgba(248,243,228,.96),rgba(236,229,212,.94));color:var(--ui-ink);box-shadow:var(--ui-shadow)}
+.pitch-hud .hud-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:0 2px 6px}
+.pitch-hud .hud-head b{font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.pitch-hud .hud-head span{font-size:9px;letter-spacing:1.4px;color:#675d4b;text-transform:uppercase}
+.pitch-hud .hud-pitchlist{display:grid;gap:4px}
+.pitch-hud button{display:grid;grid-template-columns:20px 1fr auto;align-items:center;column-gap:7px;width:100%;margin:0;padding:6px 7px;border:1px solid rgba(23,23,23,.84);border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(245,238,223,.94));color:var(--ui-ink);box-shadow:0 1px 0 rgba(255,255,255,.4) inset;min-height:34px}
+.pitch-hud button .slot{display:flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:#161616;color:#fff;font-size:10px;line-height:1}
+.pitch-hud button .pitch-name{font-size:12px;letter-spacing:1.05px;font-weight:900;text-transform:uppercase}
+.pitch-hud button small{float:none;font-family:var(--ui-mono);font-size:9px;letter-spacing:.4px;color:#5d5546}
+.pitch-hud button.active{background:linear-gradient(180deg,#f6dd61,#ebca35);color:#171717;border-color:#171717;box-shadow:0 0 0 1px rgba(255,255,255,.35) inset}
+.pitch-hud button.active small{color:#413a2b}
+.bat-hud{left:50%;top:50%;bottom:auto;transform:translate(-50%,-50%);gap:7px}
+.bat-hud span{padding:8px 10px;font-size:10px;letter-spacing:1.25px;border:2px solid #171717;border-radius:10px;background:linear-gradient(180deg,rgba(247,242,223,.97),rgba(236,229,210,.96));box-shadow:0 8px 20px rgba(0,0,0,.24);text-transform:uppercase}
+.callout{font-family:var(--ui-font);font-size:48px;letter-spacing:-1px}
+.topbar{height:62px;padding:0 18px;background:linear-gradient(180deg,rgba(13,16,19,.96),rgba(8,11,13,.94));border-bottom:1px solid rgba(255,255,255,.12)}
+.topbar b{font-size:19px;letter-spacing:.8px}.topbar span{font-size:10px;letter-spacing:1.8px}
+.menu-panel,.pause-panel,.intro-stat-card{border-radius:16px;border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 48px rgba(0,0,0,.36),0 0 0 1px rgba(255,255,255,.03) inset}
+.menu-panel{width:400px;padding:24px}
+.primary,.ghost,.season-tabs button,.roster-strip button{border-radius:12px}
+.player-card,.stadium-card{border-radius:16px;overflow:hidden}
+.player-card{box-shadow:0 22px 48px rgba(0,0,0,.34)}
+.pause-panel h2{font-size:40px;letter-spacing:2px}
+@media(max-width:900px){.scorebug{transform:scale(.84);transform-origin:top right}.pitch-hud{transform:scale(.92);transform-origin:bottom left}}
+
+/* ALPHA 70: pause audio descriptor intentionally removed; volume remains global. */
+
+
+/* ALPHA 71 — fixed-ratio Stuy Town intro + tighter timing */
+.versus-intro-screen{overflow:hidden!important}
+.versus-intro-canvas{position:absolute!important;inset:auto;left:50%;top:50%;width:auto;height:100%;aspect-ratio:16/9;transform:translate(-50%,-50%);object-fit:cover;object-position:center center}
+.timing-good-zone{left:45%;width:10%}
+
+
+/* ALPHA 80 — no-doubt HR reveal + metallic pixel-firework presentation */
+.callout.hr-callout{display:flex;align-items:center;justify-content:center;gap:20px;min-width:min(760px,92vw);font-style:italic;font-size:clamp(48px,7vw,92px);line-height:.9;filter:drop-shadow(0 10px 18px rgba(0,0,0,.48));overflow:visible}
+.callout.hr-callout .hr-text{position:relative;display:inline-block;padding:8px 14px 12px;font-weight:1000;letter-spacing:-3px;text-transform:uppercase;background:linear-gradient(180deg,#fffbd1 0%,#ffe477 18%,#b97808 40%,#fff1a0 55%,#8b5400 76%,#ffd95b 100%);background-size:100% 220%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:2px #5b3500;text-shadow:0 3px 0 #3d2100,0 7px 12px rgba(0,0,0,.45);animation:hrMetalShine .72s linear infinite}
+.callout.hr-callout .hr-text::after{content:"";position:absolute;inset:3px 2px 6px;pointer-events:none;background:linear-gradient(105deg,transparent 0 37%,rgba(255,255,255,.95) 45%,rgba(255,244,176,.48) 50%,transparent 59%);mix-blend-mode:screen;animation:hrSweep 1.05s ease-in-out infinite}
+.hr-firework{position:relative;display:block;width:78px;height:78px;flex:0 0 78px;image-rendering:pixelated}
+.hr-firework .spark{position:absolute;left:35px;top:35px;width:7px;height:7px;background:#ffd23b;box-shadow:0 0 0 2px #8a5000,0 0 10px rgba(255,207,49,.85);opacity:0;animation:pixelBurst 1.05s steps(5,end) infinite}
+.hr-firework.right{transform:scaleX(-1)}
+.hr-firework .s1{--dx:-34px;--dy:-30px;animation-delay:.00s}.hr-firework .s2{--dx:-48px;--dy:-8px;animation-delay:.06s}.hr-firework .s3{--dx:-38px;--dy:18px;animation-delay:.10s}.hr-firework .s4{--dx:-19px;--dy:37px;animation-delay:.15s}.hr-firework .s5{--dx:2px;--dy:-43px;animation-delay:.04s}.hr-firework .s6{--dx:-8px;--dy:45px;animation-delay:.18s}.hr-firework .s7{--dx:-55px;--dy:31px;animation-delay:.22s}.hr-firework .s8{--dx:-58px;--dy:-37px;animation-delay:.12s}
+@keyframes pixelBurst{0%{opacity:0;transform:translate(0,0) scale(.35)}12%{opacity:1}64%{opacity:1;transform:translate(var(--dx),var(--dy)) scale(1)}100%{opacity:0;transform:translate(calc(var(--dx)*1.18),calc(var(--dy)*1.18)) scale(.35)}}
+@keyframes hrMetalShine{0%{background-position:0 0}100%{background-position:0 100%}}
+@keyframes hrSweep{0%{transform:translateX(-55%);opacity:0}30%{opacity:.95}70%{opacity:.55}100%{transform:translateX(55%);opacity:0}}
+@media(max-width:700px){.callout.hr-callout{gap:6px}.hr-firework{width:48px;height:60px;flex-basis:48px}.hr-firework .spark{left:22px;top:28px;width:5px;height:5px}.callout.hr-callout .hr-text{-webkit-text-stroke:1px #5b3500}}
+
+
+/* ALPHA 98 — Josef hair refresh + center swing controls */
+.bat-hud{z-index:6}.bat-hud span{min-width:112px;text-align:center}
+
+
+/* ALPHA 100 — hard-lock Derby swing HUD to VERSUS-style bottom-center boxes */
+#screen-game .game-stage .bat-hud{
+  position:fixed !important;
+  left:50% !important;
+  right:auto !important;
+  top:auto !important;
+  bottom:16px !important;
+  transform:translateX(-50%) !important;
+  width:auto !important;
+  height:auto !important;
+  min-width:0 !important;
+  max-width:none !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:6px !important;
+  margin:0 !important;
+  padding:0 !important;
+  z-index:50 !important;
+}
+#screen-game .game-stage .bat-hud.show{
+  display:flex !important;
+}
+#screen-game .game-stage .bat-hud span{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  flex:0 0 72px !important;
+  width:72px !important;
+  min-width:72px !important;
+  max-width:72px !important;
+  height:48px !important;
+  min-height:48px !important;
+  max-height:48px !important;
+  margin:0 !important;
+  padding:0 5px !important;
+  overflow:hidden !important;
+  text-align:center !important;
+  white-space:normal !important;
+  line-height:1.05 !important;
+  font-size:9px !important;
+  letter-spacing:.8px !important;
+  border:2px solid #171717 !important;
+  border-radius:8px !important;
+  background:linear-gradient(180deg,rgba(247,242,223,.98),rgba(236,229,210,.97)) !important;
+  color:#171717 !important;
+  box-shadow:0 5px 14px rgba(0,0,0,.28) !important;
+}

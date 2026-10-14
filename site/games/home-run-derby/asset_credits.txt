@@ -1,0 +1,22 @@
+PCBL Alpha 21 — asset provenance
+
+PCBL player photographs, logos, reference footage, player identities, statistics,
+outfit palettes and game files were supplied by the user / existing project.
+
+Anatomical head and lower-body topology:
+MakeHuman Community base mesh and macro targets, released under CC0 in 2020.
+Modified and fitted to the existing PCBL dimensions and rig.
+https://github.com/makehumancommunity/makehuman
+https://github.com/makehumancommunity/makehuman/blob/master/LICENSE.md
+
+Face diffuse: MargaretToigo, young_lightskinned_male_diffuse_Freckles.png,
+from the MakeHuman skins02 CC0 pack. Render-time tint varies by player.
+Face normal and specular: Mindfront, Aksel_Skin_NRM.png and Aksel_Skin_SPEC.png,
+from the same CC0 pack. Normal strength is reduced for the game's style.
+https://static.makehumancommunity.org/assets/assetpacks/skins02.html
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Three.js r159: MIT. Full license in vendor/THREE-LICENSE.txt.
+The anatomy and materials are artistic base assets; they are not player scans.
+
+- Audio: blitzball-hit.ogg copied from the supplied PCBL simulator build; ambient wind is procedurally generated in-game.
