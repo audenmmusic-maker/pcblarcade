@@ -122,3 +122,24 @@
  .game-versus .versus-card-bar span{font-size:8px;}
  .game-versus .versus-card-bar strong{font-size:18px;}
 }
+
+/* PCBL WORLD featured thumbnail — actual PCBL game photos, cast, and Stuy Town aerial */
+.world-feature-cinematic{background:linear-gradient(0deg,#07150fe0 0%,#0c171336 44%,#0d1b16aa 100%),url("games/versus/assets/menu/stuytown-aerial-menu.jpg") center / cover no-repeat!important;display:flex;flex-direction:column;justify-content:flex-end;min-height:530px}
+.world-promo-scene{position:absolute;inset:0 0 auto;min-height:48%;z-index:1;display:flex;flex-direction:column;align-items:start;justify-content:space-between;padding:17px 18px}
+.world-promo-incident{background:#101c17d9;border:1px solid #c2ff8b99;padding:8px 10px;font-size:10px;letter-spacing:.13em;font-weight:900;color:#e8ffca;max-width:70%}
+.world-promo-chase{display:flex;gap:5px;align-self:start;align-items:end;transform:rotate(-8deg);filter:drop-shadow(0 8px 6px #000a)}
+.world-promo-chase span{font-size:clamp(25px,3.4vw,56px);line-height:1.1}
+.world-promo-cast{position:relative;z-index:3;display:flex;align-items:end;justify-content:center;gap:1.3%;padding:20px 2% 45px;min-height:66%}
+.world-promo-player{min-width:0;width:15.4%;position:relative;display:flex;flex-direction:column;background:#10281ccc;border:1px solid #d7f6c68c;box-shadow:0 10px 20px #0009;overflow:visible}
+.world-promo-player img{width:100%;height:clamp(95px,15vw,240px);display:block;object-fit:cover;object-position:center}
+.world-promo-player:nth-child(1) img{height:clamp(80px,9vw,155px)}
+.world-promo-player:nth-child(2) img{height:clamp(90px,10vw,172px)}
+.world-promo-player:nth-child(3) img{height:clamp(95px,11vw,184px)}
+.world-promo-player:nth-child(4) img{height:clamp(105px,12vw,205px)}
+.world-promo-player:nth-child(5) img{height:clamp(115px,13vw,222px)}
+.world-promo-player:nth-child(6) img{height:clamp(125px,14vw,242px)}
+.world-promo-player span{text-align:center;font:900 clamp(9px,1.2vw,16px)/1.2 Impact,Arial,sans-serif;background:#111f15;color:#edffe5;padding:5px 2px;letter-spacing:.025em}
+.world-promo-player small{display:block;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:clamp(6px,.65vw,9px);font-weight:900;letter-spacing:.02em;white-space:nowrap;padding:4px 5px;background:#142719e8;color:#ccff95}
+.world-promo-credit{position:absolute;bottom:0;left:0;right:0;z-index:4;background:#08100ccf;text-align:center;padding:12px;font:900 clamp(12px,1.4vw,20px) Impact,Arial,sans-serif;letter-spacing:.12em;color:#d6ffc6}
+.world-promo-credit b{color:#cbff87}
+@media(max-width:800px){.world-feature-cinematic{min-height:255px}.world-promo-player img{height:115px}.world-promo-player:nth-child(n) img{height:clamp(86px,20vw,160px)}.world-promo-cast{padding-bottom:35px}.world-promo-player small{font-size:6px}.world-promo-scene{padding:10px}.world-promo-incident{font-size:8px}}
