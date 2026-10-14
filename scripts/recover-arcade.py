@@ -19,6 +19,13 @@ def fetch(name):
 print("Recovering",len(names),"original Arcade files from existing Cloudflare Worker.")
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as pool:
     results=list(pool.map(fetch,names))
+# Cloudflare Workers intentionally do not expose platform-control files.
+# Restore their exact contents from the owner-provided source archive.
+special={
+ "_headers":b"/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n\n/index.html\n  Cache-Control: public, max-age=120\n\n/world-url.js\n  Cache-Control: no-cache\n\n/app.js\n  Cache-Control: no-cache\n",
+ "_redirects":b"/index  /index.html  301\n"
+}
+results=[(name,special[name],None) if name in special and error else (name,data,error) for name,data,error in results]
 errors=[(name,error) for name,data,error in results if error]
 for name,error in errors[:30]:print("MISSING",name,error)
 if errors:raise SystemExit(f"Refusing partial import: {len(errors)} of {len(names)} files missing")
